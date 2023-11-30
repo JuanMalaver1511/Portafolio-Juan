@@ -37,3 +37,7 @@ function efectoHabilidades(){
 window.onscroll = function(){
     efectoHabilidades();
 }
+ // Alerta para confirmar si se envio el mensaje
+function alert(){
+    alert("Gracias por tu mensaje <3")
+}
