@@ -39,5 +39,5 @@ window.onscroll = function(){
 }
  // Alerta para confirmar si se envio el mensaje
 function alert(){
-    alert("Gracias por tu mensaje <3")
+    alert("Gracias por tu mensaje <3");
 }
