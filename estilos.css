@@ -303,6 +303,10 @@ html{
     0%{width: 0%;}
     100%{width: 59%;}
 }
+@keyframes react{
+    0%{width: 0%;}
+    100%{width: 40%;}
+}
 /*Skills profesional*/
 .skills .skill .comunicacion{
     width: 0%;
