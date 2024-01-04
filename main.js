@@ -1,3 +1,6 @@
+function Alerta(){
+    alert('Gracias por tu mensaje <3');
+}
 let menuVisible = false;
 // Funcion que oculta o muestra el menu
 function mostrarOcultarMenu(){
@@ -38,6 +41,3 @@ window.onscroll = function(){
     efectoHabilidades();
 }
  // Alerta para confirmar si se envio el mensaje
-function alert(){
-    alert("Gracias por tu mensaje <3");
-}
