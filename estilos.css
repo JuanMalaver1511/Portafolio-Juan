@@ -125,6 +125,7 @@ html{
     padding: 20px 0;
 }
 .sobremi .contenido-seccion p{
+    text-align: justify;
     font: 18px;
     line-height: 22px;
     margin-bottom: 20px;
@@ -156,7 +157,7 @@ html{
     width: 130px;
 }
 .sobremi .fila .col ul li span{
-    background-color: #cec9c9;
+    background-color: #cec9c991;
     padding: 3px;
     font-weight: bold;
     border-radius: 5px;
@@ -209,6 +210,7 @@ html{
     transition: 1s;
 }
 .sobremi button:hover .overlay{
+    background-color: #172935;
     width: 100%;
 }
 /*SECCION DE SKILLS*/
@@ -270,6 +272,7 @@ html{
     top: -17px;
     right: -15px;
     font-size: 14px;
+    color: rgb(56, 56, 56);
 }
 .skills .skill .javascript{
     width: 0%;
@@ -548,6 +551,7 @@ html{
     transition: 1s;
 }
 .contacto button:hover .overlay{
+    background-color: #172935;
     width: 100%;
 }
 footer{
@@ -579,7 +583,7 @@ footer .arriba{
     width: 50px;
     height: 50px;
     background-color: #cec9c9;
-    color: #fff;
+    color: black;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
