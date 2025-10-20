@@ -11,7 +11,7 @@ html{
     scroll-behavior: smooth;
 }
 .contenedor-header{
-    background: #1e2326;
+    background: #282e34e3;
     position: fixed;
     width: 100%;
     top: 0;
@@ -273,6 +273,23 @@ html{
     right: -15px;
     font-size: 14px;
     color: rgb(56, 56, 56);
+}
+
+.skills .skill .react{
+    width: 0%;
+    animation: 2s react forwards;
+}
+@keyframes react{
+    0%{width: 0%;}
+    100%{width: 45%;}
+}
+.skills .skill .moodle{
+    width: 0%;
+    animation: 2s moodle forwards;
+}
+@keyframes moodle{
+    0%{width: 0%;}
+    100%{width: 45%;}
 }
 .skills .skill .javascript{
     width: 0%;
