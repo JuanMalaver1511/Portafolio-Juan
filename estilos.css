@@ -61,6 +61,18 @@ body {
     transition: background 0.4s ease, color 0.4s ease;
 }
 
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    z-index: 200;
+    transition: width 0.1s linear;
+    border-radius: 0 2px 2px 0;
+}
+
 #particles-canvas {
     position: fixed;
     top: 0;
@@ -313,10 +325,23 @@ body {
 .hamburger {
     display: none;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 5px;
     cursor: pointer;
-    padding: 8px;
+    padding: 10px;
     z-index: 101;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+
+.hamburger:hover {
+    border-color: var(--primary);
 }
 
 .hamburger span {
@@ -352,6 +377,22 @@ body {
     overflow: hidden;
 }
 
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 30% 50%, rgba(0, 166, 212, 0.04) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 50%, rgba(123, 47, 247, 0.04) 0%, transparent 60%);
+    animation: hero-bg-shift 12s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes hero-bg-shift {
+    0% { transform: scale(1) translate(0, 0); }
+    100% { transform: scale(1.1) translate(-10px, 10px); }
+}
+
 .hero-content {
     position: relative;
     display: flex;
@@ -373,10 +414,11 @@ body {
 }
 
 .hero-image {
-    width: 260px;
-    height: 260px;
-    border-radius: 20px;
+    width: 250px;
+    height: 310px;
+    border-radius: 16px;
     object-fit: cover;
+    object-position: center 20%;
     position: relative;
     z-index: 2;
     border: 2px solid var(--glass-border);
@@ -385,18 +427,18 @@ body {
 }
 
 .hero-image:hover {
-    transform: scale(1.02);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    transform: scale(1.03);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
 }
 
 .hero-image-glow {
     position: absolute;
     inset: -8px;
-    border-radius: 24px;
+    border-radius: 20px;
     background: var(--primary);
     z-index: 1;
     opacity: 0.15;
-    filter: blur(12px);
+    filter: blur(14px);
     animation: pulse-glow 3s ease-in-out infinite;
 }
 
@@ -407,6 +449,44 @@ body {
 
 .hero-text {
     flex: 1;
+}
+
+.hero-entrance .hero-image-wrapper {
+    animation: hero-fade-in 0.8s ease forwards;
+}
+
+.hero-entrance .terminal-line {
+    animation: hero-fade-in 0.6s ease forwards;
+}
+
+.hero-entrance .hero-title {
+    animation: hero-fade-in 0.6s ease 0.15s forwards;
+    opacity: 0;
+}
+
+.hero-entrance .hero-subtitle-wrapper {
+    animation: hero-fade-in 0.6s ease 0.3s forwards;
+    opacity: 0;
+}
+
+.hero-entrance .hero-description {
+    animation: hero-fade-in 0.6s ease 0.45s forwards;
+    opacity: 0;
+}
+
+.hero-entrance .hero-socials {
+    animation: hero-fade-in 0.6s ease 0.6s forwards;
+    opacity: 0;
+}
+
+.hero-entrance .scroll-indicator {
+    animation: hero-fade-in 0.6s ease 0.8s forwards;
+    opacity: 0;
+}
+
+@keyframes hero-fade-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .terminal-line {
@@ -525,15 +605,25 @@ body {
 .scroll-arrow {
     width: 20px;
     height: 20px;
-    border-right: 2px solid var(--text-dim);
-    border-bottom: 2px solid var(--text-dim);
+    border-right: 2px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
     transform: rotate(45deg);
     animation: scroll-bounce 2s ease infinite;
+    opacity: 0.6;
 }
 
 @keyframes scroll-bounce {
-    0%, 100% { transform: rotate(45deg) translate(0, 0); opacity: 0.4; }
-    50% { transform: rotate(45deg) translate(5px, 5px); opacity: 1; }
+    0%, 100% { transform: rotate(45deg) translate(0, 0); opacity: 0.3; }
+    50% { transform: rotate(45deg) translate(6px, 6px); opacity: 0.8; }
+}
+
+.scroll-indicator span {
+    animation: scroll-pulse 2s ease infinite;
+}
+
+@keyframes scroll-pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.8; }
 }
 
 /* ABOUT */
@@ -589,6 +679,19 @@ body {
 
 .btn-primary:active {
     transform: translateY(0);
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(0);
+    animation: ripple-effect 0.6s ease-out forwards;
+    pointer-events: none;
+}
+
+@keyframes ripple-effect {
+    to { transform: scale(4); opacity: 0; }
 }
 
 .about-cards {
@@ -699,13 +802,26 @@ body {
     border: 1px solid var(--glass-border);
     transition: var(--transition);
     cursor: pointer;
+    animation: interest-float 4s ease-in-out infinite;
+}
+
+.interest-item:nth-child(2) { animation-delay: 0.3s; }
+.interest-item:nth-child(3) { animation-delay: 0.6s; }
+.interest-item:nth-child(4) { animation-delay: 0.9s; }
+.interest-item:nth-child(5) { animation-delay: 1.2s; }
+.interest-item:nth-child(6) { animation-delay: 1.5s; }
+
+@keyframes interest-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
 }
 
 .interest-item:hover {
     background: rgba(0, 166, 212, 0.04);
     border-color: var(--primary);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    animation-play-state: paused;
 }
 
 .interest-item i {
@@ -1190,7 +1306,7 @@ body {
         border-left: 1px solid var(--glass-border);
     }
 
-    .nav-links.active {
+    #nav.active .nav-links {
         right: 0;
     }
 
@@ -1209,8 +1325,12 @@ body {
     }
 
     .hero-image {
-        width: 200px;
-        height: 200px;
+        width: 180px;
+        height: 220px;
+    }
+
+    .hero-image-glow {
+        border-radius: 18px;
     }
 
     .hero-title-name {
@@ -1252,13 +1372,13 @@ body {
     }
 
     .hero-image {
-        width: 170px;
-        height: 170px;
-        border-radius: 16px;
+        width: 150px;
+        height: 190px;
+        border-radius: 14px;
     }
 
     .hero-image-glow {
-        border-radius: 20px;
+        border-radius: 18px;
     }
 
     .hero-title-name {
@@ -1284,8 +1404,8 @@ body {
 
 @media screen and (max-width: 400px) {
     .hero-image {
-        width: 150px;
-        height: 150px;
+        width: 130px;
+        height: 165px;
     }
 
     .hero-title-name {

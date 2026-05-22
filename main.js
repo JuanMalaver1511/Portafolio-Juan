@@ -1,5 +1,5 @@
 /* =============================================
-   TRANSLATIONS (ES / EN)
+   TRANSLATIONS
    ============================================= */
 const i18n = {
     es: {
@@ -35,10 +35,10 @@ const i18n = {
         },
         portfolio: {
             title: 'Portafolio', view: 'Ver proyecto',
-            tag1: 'AI', proj1: 'Asistente IA', proj1_desc: 'Plataforma de inteligencia artificial',
-            tag2: 'Web', proj2: 'Noticias', proj2_desc: 'Plataforma de noticias con Angular y Node.js',
-            proj3: 'App Móvil', proj3_desc: 'Aplicación de finanzas personales con Flutter',
-            proj4: 'Panel de análisis', proj4_desc: 'Panel de análisis con Python y React'
+            tag1: 'AI', proj1: 'Sistema IA', proj1_desc: 'Plataforma de inteligencia artificial',
+            tag2: 'Web', proj2: 'E-commerce', proj2_desc: 'Tienda online con Angular y Node.js',
+            proj3: 'App Móvil', proj3_desc: 'Aplicación multiplataforma con Flutter',
+            proj4: 'Dashboard Analytics', proj4_desc: 'Panel de análisis con Python y React'
         },
         contact: {
             title: 'Contacto', email_head: 'Email', phone_head: 'Teléfono', location_head: 'Ubicación',
@@ -135,21 +135,71 @@ function toggleLang() {
 
 function applyTranslations() {
     const t = i18n[currentLang];
-
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.dataset.i18n;
         const val = key.split('.').reduce((obj, k) => obj && obj[k], t);
         if (val !== undefined) el.textContent = val;
     });
-
     document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
         const key = el.dataset.i18nPlaceholder;
         const val = key.split('.').reduce((obj, k) => obj && obj[k], t);
         if (val !== undefined) el.placeholder = val;
     });
-
     document.title = t.page.title;
 }
+
+/* =============================================
+   SCROLL PROGRESS BAR
+   ============================================= */
+(function scrollProgress() {
+    const bar = document.getElementById('scroll-progress');
+    if (!bar) return;
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                const scrollTop = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+                bar.style.width = progress + '%';
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+})();
+
+/* =============================================
+   HERO ENTRANCE ANIMATION
+   ============================================= */
+(function heroEntrance() {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+    requestAnimationFrame(() => {
+        hero.classList.add('hero-entrance');
+    });
+})();
+
+/* =============================================
+   RIPPLE EFFECT ON BUTTONS
+   ============================================= */
+(function initRipple() {
+    document.querySelectorAll('.btn-primary').forEach(btn => {
+        btn.addEventListener('click', function (e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const size = Math.max(rect.width, rect.height) * 2;
+            const ripple = document.createElement('span');
+            ripple.className = 'ripple';
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = x - size / 2 + 'px';
+            ripple.style.top = y - size / 2 + 'px';
+            this.appendChild(ripple);
+            setTimeout(() => ripple.remove(), 600);
+        });
+    });
+})();
 
 /* =============================================
    PARTICLE NETWORK
@@ -165,19 +215,11 @@ function applyTranslations() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
     }
-
     window.addEventListener('resize', resize);
     resize();
 
-    document.addEventListener('mousemove', (e) => {
-        mouse.x = e.clientX;
-        mouse.y = e.clientY;
-    });
-
-    document.addEventListener('mouseleave', () => {
-        mouse.x = null;
-        mouse.y = null;
-    });
+    document.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
+    document.addEventListener('mouseleave', () => { mouse.x = null; mouse.y = null; });
 
     class Particle {
         constructor() { this.reset(); }
@@ -218,7 +260,6 @@ function applyTranslations() {
         particles = [];
         for (let i = 0; i < count; i++) particles.push(new Particle());
     }
-
     init(Math.min(Math.floor((canvas.width * canvas.height) / 14000), 80));
 
     function drawConnections() {
@@ -245,7 +286,6 @@ function applyTranslations() {
         drawConnections();
         requestAnimationFrame(animate);
     }
-
     animate();
 
     window.addEventListener('resize', () => {
@@ -255,7 +295,7 @@ function applyTranslations() {
 })();
 
 /* =============================================
-   TYPING EFFECT (i18n-aware)
+   TYPING EFFECT
    ============================================= */
 (function initTyping() {
     const el = document.getElementById('typing-text');
@@ -289,7 +329,6 @@ function applyTranslations() {
         }
         type();
     }
-
     startTyping();
     typingRestart = startTyping;
 })();
@@ -303,7 +342,6 @@ function applyTranslations() {
             if (entry.isIntersecting) entry.target.classList.add('visible');
         });
     }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
-
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 })();
 
@@ -331,7 +369,6 @@ function applyTranslations() {
             }
         });
     }, { threshold: 0.5 });
-
     document.querySelectorAll('.skill-progress').forEach(bar => observer.observe(bar));
 })();
 
@@ -353,7 +390,7 @@ function applyTranslations() {
 })();
 
 /* =============================================
-   CARD TILT (desktop only)
+   CARD TILT
    ============================================= */
 (function cardTilt() {
     if ('ontouchstart' in window || navigator.maxTouchPoints > 0) return;
