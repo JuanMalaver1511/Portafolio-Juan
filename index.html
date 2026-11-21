@@ -4,440 +4,671 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="img/ordenador-portatil.png">
+    <meta name="description" content="Portafolio de Juan Malaver, Ingeniero de Sistemas y desarrollador Full Stack. Proyectos, experiencia y contacto.">
+    <link rel="icon" href="img/ordenador-portatil.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <title data-i18n="page.title">Juan Malaver | Ingeniero de Sistemas</title>
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Juan Malaver — Ingeniero de Sistemas &amp; Full Stack Developer</title>
+    <script>
+        (function () {
+            document.documentElement.classList.add('js');
+            try {
+                const saved = localStorage.getItem('theme');
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                document.documentElement.setAttribute('data-theme', saved || (prefersDark ? 'dark' : 'light'));
+            } catch (error) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    <div id="scroll-progress"></div>
-    <canvas id="particles-canvas"></canvas>
+    <a class="skip-link" href="#contenido" data-i18n="a11y.skip">Saltar al contenido</a>
+    <div id="scroll-progress" aria-hidden="true"></div>
 
-    <header class="header">
-        <div class="header-container">
-            <a href="https://www.linkedin.com/in/juan-manuel-malaver-5422a1151" class="logo">&lt;JM /&gt;</a>
-            <nav id="nav">
-                <ul class="nav-links">
-                    <li><a href="#inicio" onclick="seleccionar()" class="nav-link" data-i18n="nav.inicio">Inicio</a></li>
-                    <li><a href="#sobremi" onclick="seleccionar()" class="nav-link" data-i18n="nav.sobremi">Sobre Mí</a></li>
-                    <li><a href="#skills" onclick="seleccionar()" class="nav-link" data-i18n="nav.skills">Skills</a></li>
-                    <li><a href="#curriculum" onclick="seleccionar()" class="nav-link" data-i18n="nav.curriculum">Curriculum</a></li>
-                    <li><a href="#portafolio" onclick="seleccionar()" class="nav-link" data-i18n="nav.portafolio">Portafolio</a></li>
-                    <li><a href="#contacto" onclick="seleccionar()" class="nav-link" data-i18n="nav.contacto">Contacto</a></li>
+    <header class="site-header" id="site-header">
+        <div class="header-inner">
+            <a class="brand" href="#inicio" aria-label="Juan Malaver — Inicio">
+                <span class="brand-mark" aria-hidden="true">JM</span>
+                <span class="brand-copy">
+                    <span class="brand-name">Juan Malaver</span>
+                    <span class="brand-role" data-i18n="brand.role">Ing. de Sistemas · Full Stack</span>
+                </span>
+            </a>
+
+            <nav class="nav" id="primary-nav" aria-label="Navegación principal" data-i18n-aria-label="aria.nav">
+                <ul class="nav-list">
+                    <li><a class="nav-link is-active" href="#inicio" data-section="inicio" aria-current="page" data-i18n="nav.inicio">Inicio</a></li>
+                    <li><a class="nav-link" href="#sobremi" data-section="sobremi" data-i18n="nav.sobremi">Sobre mí</a></li>
+                    <li><a class="nav-link" href="#skills" data-section="skills" data-i18n="nav.skills">Skills</a></li>
+                    <li><a class="nav-link" href="#curriculum" data-section="curriculum" data-i18n="nav.curriculum">Trayectoria</a></li>
+                    <li><a class="nav-link" href="#portafolio" data-section="portafolio" data-i18n="nav.portafolio">Proyectos</a></li>
+                    <li><a class="nav-link" href="#contacto" data-section="contacto" data-i18n="nav.contacto">Contacto</a></li>
                 </ul>
             </nav>
-            <div class="header-actions">
-                <button class="lang-toggle" onclick="toggleLang()" aria-label="Cambiar idioma">
+
+            <div class="header-tools">
+                <button class="control lang-toggle" type="button" data-i18n-aria-label="aria.lang" aria-label="Cambiar idioma">
                     <span class="lang-current">ES</span>
-                    <span class="lang-divider">/</span>
+                    <span class="lang-sep" aria-hidden="true">/</span>
                     <span class="lang-other">EN</span>
                 </button>
-                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar tema">
-                    <i class="fa-solid fa-moon"></i>
-                    <i class="fa-solid fa-sun"></i>
+                <button class="control theme-toggle" type="button" data-i18n-aria-label="aria.theme" aria-label="Cambiar tema">
+                    <i class="fa-solid fa-moon" aria-hidden="true"></i>
+                    <i class="fa-solid fa-sun" aria-hidden="true"></i>
                 </button>
-            </div>
-            <div class="hamburger" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
+                <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-i18n-aria-label="aria.menu" aria-label="Abrir menú">
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </header>
 
-    <section id="inicio" class="hero">
-        <div class="hero-content">
-            <div class="hero-image-wrapper">
-                <div class="hero-image-glow"></div>
-                <img src="img/Foto.jpg" alt="Juan Malaver" class="hero-image">
-            </div>
-            <div class="hero-text">
-                <div class="terminal-line">
-                    <span class="terminal-prompt">$</span>
-                    <span class="terminal-command" data-i18n="hero.terminal">./greet --name="Juan Malaver"</span>
-                </div>
-                <h1 class="hero-title">
-                    <span class="hero-title-name">Juan Malaver</span>
-                </h1>
-                <div class="hero-subtitle-wrapper">
-                    <span class="hero-subtitle-prefix">&gt;</span>
-                    <span id="typing-text" class="hero-subtitle"></span>
-                    <span class="cursor">|</span>
-                </div>
-                <p class="hero-description" data-i18n="hero.description">Full Stack Developer &bull; Ingeniero de Sistemas &bull; Innovador</p>
-                <div class="hero-socials">
-                    <a href="https://www.linkedin.com/in/juan-manuel-malaver-5422a1151" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="https://github.com/JuanMalaver1511" class="social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="social-icon" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <span data-i18n="hero.scroll">Desplázate</span>
-            <div class="scroll-arrow"></div>
-        </div>
-    </section>
-
-    <section id="sobremi" class="section about">
-        <div class="section-container">
-            <div class="section-header reveal">
-                <span class="section-number">01.</span>
-                <h2 class="section-title" data-i18n="about.title">Sobre Mí</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="about-content">
-                <div class="about-text reveal">
-                    <p id="about-text">
-                        <span class="highlight" data-i18n="about.hello">Hola, soy Juan Malaver</span>
-                        <span data-i18n="about.desc">un apasionado desarrollador full stack con un sólido dominio de una variedad de tecnologías, incluyendo C#, Python, TypeScript, Angular, MongoDB, Java, JavaScript, HTML, CSS y más. Mi enfoque principal es crear soluciones web innovadoras y funcionales que ofrezcan una experiencia excepcional a los usuarios. Estoy comprometido con el aprendizaje continuo y la mejora constante, lo que me motiva a mantenerme actualizado en las últimas tendencias tecnológicas y las mejores prácticas de desarrollo.</span>
+    <main id="contenido">
+        <section id="inicio" class="hero" aria-labelledby="hero-title">
+            <div class="container hero-inner">
+                <div class="hero-main">
+                    <p class="hero-eyebrow">
+                        <span class="status-dot" aria-hidden="true"></span>
+                        <span data-i18n="hero.availability">Disponible para nuevos proyectos</span>
+                        <span class="eyebrow-sep" aria-hidden="true">/</span>
+                        <span class="hero-location" data-i18n="hero.location">Tunja, Colombia</span>
                     </p>
-                    <a href="CV Juan Manuel Malaver Echeverria.pdf" download class="btn-primary">
-                        <i class="fa-solid fa-download"></i> <span data-i18n="about.download">Descargar CV</span>
-                        <span class="btn-glow"></span>
+
+                    <h1 class="hero-title" id="hero-title">
+                        <span class="hero-title-line">Juan</span>
+                        <span class="hero-title-line hero-title-accent"><em>Malaver</em></span>
+                    </h1>
+
+                    <p class="hero-role">
+                        <span class="hero-role-prefix" aria-hidden="true">&gt;</span>
+                        <span id="typing-text" class="hero-role-text"></span><span class="cursor" aria-hidden="true">_</span>
+                    </p>
+
+                    <p class="hero-description" data-i18n="hero.description">
+                        Ingeniero de Sistemas y desarrollador full stack. Diseño y construyo experiencias web claras,
+                        rápidas y funcionales, con atención al detalle y foco en las personas.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#portafolio">
+                            <span data-i18n="hero.cta_projects">Ver proyectos</span>
+                            <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+                        </a>
+                        <a class="btn btn-ghost" href="CV_Juan_Malaver_FullStack.pdf" download>
+                            <i class="fa-regular fa-file-pdf" aria-hidden="true"></i>
+                            <span data-i18n="hero.cta_cv">Descargar CV</span>
+                        </a>
+                    </div>
+
+                    <div class="hero-links">
+                        <a href="https://www.linkedin.com/in/juan-manuel-malaver-5422a1151" target="_blank" rel="noopener noreferrer">
+                            LinkedIn <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://github.com/JuanMalaver1511" target="_blank" rel="noopener noreferrer">
+                            GitHub <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                        </a>
+                        <a href="mailto:juanmalaver1511@gmail.com">
+                            <span data-i18n="hero.email">Email</span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <aside class="hero-aside" aria-label="Retrato y perfil" data-i18n-aria-label="aria.portrait">
+                    <figure class="portrait">
+                        <div class="portrait-frame">
+                            <img src="img/Foto.jpg" alt="Retrato de Juan Malaver" width="384" height="504" fetchpriority="high">
+                        </div>
+                        <figcaption class="portrait-caption">
+                            <span class="portrait-index" aria-hidden="true">01</span>
+                            <span data-i18n="hero.portrait_role">Full Stack Developer · Ingeniero de Sistemas</span>
+                        </figcaption>
+                    </figure>
+
+                    <div class="hero-note">
+                        <span class="status-dot" aria-hidden="true"></span>
+                        <p data-i18n="hero.note">Abierto a oportunidades full stack y proyectos de producto.</p>
+                    </div>
+
+                    <ul class="hero-stack" aria-label="Tecnologías principales" data-i18n-aria-label="aria.stack">
+                        <li>Angular</li>
+                        <li>React</li>
+                        <li>TypeScript</li>
+                        <li>C#</li>
+                        <li>Python</li>
+                    </ul>
+                </aside>
+            </div>
+
+            <a class="scroll-cue" href="#sobremi">
+                <span class="scroll-line" aria-hidden="true"></span>
+                <span data-i18n="hero.scroll">Desplázate</span>
+            </a>
+        </section>
+
+        <section id="sobremi" class="section about" aria-labelledby="about-title">
+            <div class="container">
+                <header class="section-head reveal">
+                    <p class="eyebrow"><span class="eyebrow-index">01</span> <span data-i18n="about.eyebrow">Sobre mí</span></p>
+                    <h2 class="display" id="about-title" data-i18n="about.headline">Ingeniería con foco en las personas.</h2>
+                </header>
+
+                <div class="about-grid">
+                    <div class="about-copy reveal">
+                        <p class="about-lead">
+                            <span class="about-hello" data-i18n="about.hello">Hola, soy Juan Malaver.</span>
+                            <span data-i18n="about.desc1">Soy desarrollador full stack e Ingeniero de Sistemas. Trabajo con C#, Python, TypeScript, Angular, MongoDB, Java, JavaScript, HTML y CSS, creando soluciones web innovadoras, funcionales y bien pensadas.</span>
+                        </p>
+                        <p class="about-paragraph" data-i18n="about.desc2">
+                            Actualmente me desempeño como Profesional Soporte - Desarrollador en la Universidad Santo Tomás,
+                            donde combino desarrollo web, administración de Moodle y gestión de plataformas virtuales.
+                            Me mueve el aprendizaje continuo, la mejora constante y el trabajo en equipo.
+                        </p>
+
+                        <div class="about-stats" aria-label="Datos profesionales">
+                            <div class="stat">
+                                <strong>3+</strong>
+                                <span data-i18n="about.stat1">Años de experiencia</span>
+                            </div>
+                            <div class="stat">
+                                <strong>15+</strong>
+                                <span data-i18n="about.stat2">Tecnologías y herramientas</span>
+                            </div>
+                            <div class="stat">
+                                <strong>04</strong>
+                                <span data-i18n="about.stat3">Proyectos destacados</span>
+                            </div>
+                        </div>
+
+                        <blockquote class="about-quote" data-i18n="about.quote">
+                            “Me interesa construir software claro, útil y sostenible en el tiempo.”
+                        </blockquote>
+                    </div>
+
+                    <aside class="about-side">
+                        <div class="info-card reveal">
+                            <div class="info-card-head">
+                                <span class="mono" data-i18n="about.profile">Perfil</span>
+                                <span class="badge">ES / EN</span>
+                            </div>
+                            <ul class="info-list">
+                                <li>
+                                    <span data-i18n="about.location">Ubicación</span>
+                                    <span data-i18n="about.location_val">Tunja, Boyacá — Colombia</span>
+                                </li>
+                                <li>
+                                    <span data-i18n="about.email">Email</span>
+                                    <a href="mailto:juanmalaver1511@gmail.com">juanmalaver1511@gmail.com</a>
+                                </li>
+                                <li>
+                                    <span data-i18n="about.phone">Teléfono</span>
+                                    <a href="tel:+573202594521">(+57) 320 259 4521</a>
+                                </li>
+                                <li>
+                                    <span data-i18n="about.role">Rol</span>
+                                    <span data-i18n="about.role_val">Ing. de Sistemas · Full Stack</span>
+                                </li>
+                            </ul>
+                            <a class="text-link" href="CV_Juan_Malaver_FullStack.pdf" download>
+                                <i class="fa-regular fa-file-pdf" aria-hidden="true"></i>
+                                <span data-i18n="about.download">Descargar CV completo</span>
+                            </a>
+                        </div>
+
+                        <div class="interests reveal">
+                            <span class="mono" data-i18n="about.interests">Intereses</span>
+                            <ul class="chips">
+                                <li><i class="fa-solid fa-code" aria-hidden="true"></i><span data-i18n="about.int_dev">Desarrollo</span></li>
+                                <li><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i><span data-i18n="about.int_edu">Educación</span></li>
+                                <li><i class="fa-solid fa-rocket" aria-hidden="true"></i><span data-i18n="about.int_ent">Emprender</span></li>
+                                <li><i class="fa-solid fa-gamepad" aria-hidden="true"></i><span data-i18n="about.int_games">Juegos</span></li>
+                                <li><i class="fa-solid fa-futbol" aria-hidden="true"></i><span data-i18n="about.int_sports">Deportes</span></li>
+                                <li><i class="fa-solid fa-music" aria-hidden="true"></i><span data-i18n="about.int_music">Música</span></li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section skills" aria-labelledby="skills-title">
+            <div class="container">
+                <header class="section-head reveal">
+                    <p class="eyebrow"><span class="eyebrow-index">02</span> <span data-i18n="skills.eyebrow">Capacidades</span></p>
+                    <h2 class="display" id="skills-title" data-i18n="skills.headline">Herramientas para resolver problemas reales.</h2>
+                    <p class="section-sub" data-i18n="skills.sub">
+                        Tecnologías que uso para construir interfaces, servicios y plataformas, complementadas con
+                        habilidades para colaborar, comunicar y aprender.
+                    </p>
+                </header>
+
+                <div class="skills-grid reveal-stagger">
+                    <article class="skill-card">
+                        <div class="skill-card-head">
+                            <h3 data-i18n="skills.frontend">Frontend</h3>
+                            <span class="mono" aria-hidden="true">01</span>
+                        </div>
+                        <p data-i18n="skills.frontend_desc">Interfaces responsivas, accesibles y cuidadas al detalle.</p>
+                        <ul class="chips">
+                            <li>Angular</li>
+                            <li>React</li>
+                            <li>TypeScript</li>
+                            <li>JavaScript</li>
+                            <li>HTML5</li>
+                            <li>CSS3</li>
+                        </ul>
+                    </article>
+
+                    <article class="skill-card">
+                        <div class="skill-card-head">
+                            <h3 data-i18n="skills.backend">Backend &amp; datos</h3>
+                            <span class="mono" aria-hidden="true">02</span>
+                        </div>
+                        <p data-i18n="skills.backend_desc">Lógica de negocio, APIs y modelado de información.</p>
+                        <ul class="chips">
+                            <li>C#</li>
+                            <li>Python</li>
+                            <li>Java</li>
+                            <li>MongoDB</li>
+                            <li>MySQL</li>
+                            <li>SQL</li>
+                        </ul>
+                    </article>
+
+                    <article class="skill-card">
+                        <div class="skill-card-head">
+                            <h3 data-i18n="skills.platforms">Plataformas &amp; soporte</h3>
+                            <span class="mono" aria-hidden="true">03</span>
+                        </div>
+                        <p data-i18n="skills.platforms_desc">Administración de entornos, Moodle y soporte tecnológico.</p>
+                        <ul class="chips">
+                            <li>Moodle</li>
+                            <li>Git / GitHub</li>
+                            <li><span data-i18n="skills.ai">IA aplicada</span></li>
+                            <li><span data-i18n="skills.it">Soporte TI</span></li>
+                            <li><span data-i18n="skills.networks">Redes</span></li>
+                        </ul>
+                    </article>
+                </div>
+
+                <div class="soft-skills reveal">
+                    <span class="mono" data-i18n="skills.soft">Competencias transversales</span>
+                    <ul class="chips">
+                        <li data-i18n="skills.com">Comunicación</li>
+                        <li data-i18n="skills.team">Trabajo en equipo</li>
+                        <li data-i18n="skills.creativity">Creatividad</li>
+                        <li data-i18n="skills.dedication">Dedicación</li>
+                        <li data-i18n="skills.ai_management">Manejo de IA</li>
+                        <li data-i18n="skills.problems">Resolución de problemas</li>
+                        <li data-i18n="skills.leadership">Liderazgo</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="curriculum" class="section resume" aria-labelledby="resume-title">
+            <div class="container">
+                <header class="section-head reveal">
+                    <p class="eyebrow"><span class="eyebrow-index">03</span> <span data-i18n="curriculum.eyebrow">Trayectoria</span></p>
+                    <h2 class="display" id="resume-title" data-i18n="curriculum.headline">Experiencia y formación.</h2>
+                    <p class="section-sub" data-i18n="curriculum.sub">
+                        Un recorrido por los equipos, instituciones y proyectos que han dado forma a mi perfil profesional.
+                    </p>
+                </header>
+
+                <div class="resume-grid">
+                    <div class="resume-col reveal">
+                        <div class="resume-col-head">
+                            <h3 data-i18n="curriculum.exp">Experiencia</h3>
+                            <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+                        </div>
+
+                        <article class="resume-item">
+                            <span class="resume-date" data-i18n="curriculum.exp1_date">2024 — Actualidad</span>
+                            <div class="resume-body">
+                                <h4 data-i18n="curriculum.exp1_title">Profesional Soporte - Desarrollador</h4>
+                                <p class="resume-org" data-i18n="curriculum.exp1_org">Universidad Santo Tomás · Tunja</p>
+                                <p class="resume-desc" data-i18n="curriculum.exp1_desc">
+                                    Desarrollo web, administración de Moodle y gestión de plataformas virtuales,
+                                    combinando soporte tecnológico con mejora continua de los servicios.
+                                </p>
+                                <ul class="mini-tags">
+                                    <li>Web</li>
+                                    <li>Moodle</li>
+                                    <li>Plataformas</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="resume-item">
+                            <span class="resume-date">2023</span>
+                            <div class="resume-body">
+                                <h4 data-i18n="curriculum.exp2_title">Desarrollador FullStack Junior</h4>
+                                <p class="resume-org">Monolegal</p>
+                                <p class="resume-desc" data-i18n="curriculum.exp2_desc">
+                                    Práctica profesional aplicando C#, MongoDB, JavaScript, HTML y Angular para
+                                    contribuir al desarrollo de soluciones tecnológicas.
+                                </p>
+                                <ul class="mini-tags">
+                                    <li>C#</li>
+                                    <li>Angular</li>
+                                    <li>MongoDB</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="resume-item">
+                            <span class="resume-date">2023</span>
+                            <div class="resume-body">
+                                <h4 data-i18n="curriculum.exp3_title">Desarrollador de Software</h4>
+                                <p class="resume-org">Wheels GoGo</p>
+                                <p class="resume-desc" data-i18n="curriculum.exp3_desc">
+                                    Desarrollo de soluciones móviles y web con Flutter, CSS, React, HTML y JavaScript
+                                    en un entorno de startup.
+                                </p>
+                                <ul class="mini-tags">
+                                    <li>Flutter</li>
+                                    <li>React</li>
+                                    <li>JavaScript</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="resume-col reveal">
+                        <div class="resume-col-head">
+                            <h3 data-i18n="curriculum.edu">Educación</h3>
+                            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                        </div>
+
+                        <article class="resume-item">
+                            <span class="resume-date">2019 — 2023</span>
+                            <div class="resume-body">
+                                <h4 data-i18n="curriculum.edu1_title">Ingeniero de Sistemas</h4>
+                                <p class="resume-org" data-i18n="curriculum.edu1_org">Universidad Juan de Castellanos</p>
+                            </div>
+                        </article>
+
+                        <article class="resume-item">
+                            <span class="resume-date">2017 — 2018</span>
+                            <div class="resume-body">
+                                <h4 data-i18n="curriculum.edu2_title">Técnico en Sistemas, mantenimiento y redes</h4>
+                                <p class="resume-org">UPTC</p>
+                            </div>
+                        </article>
+
+                        <article class="resume-item">
+                            <span class="resume-date">2023</span>
+                            <div class="resume-body">
+                                <h4 data-i18n="curriculum.edu3_title">Curso React JS</h4>
+                                <p class="resume-org">TinCode</p>
+                            </div>
+                        </article>
+
+                        <article class="resume-item">
+                            <span class="resume-date">2023</span>
+                            <div class="resume-body">
+                                <h4 data-i18n="curriculum.edu4_title">Curso SQL</h4>
+                                <p class="resume-org">Desafío LATAM</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="resume-cta reveal">
+                    <p data-i18n="curriculum.cta_text">¿Quieres ver el detalle completo de mi experiencia?</p>
+                    <a class="btn btn-ghost" href="CV_Juan_Malaver_FullStack.pdf" download>
+                        <i class="fa-regular fa-file-pdf" aria-hidden="true"></i>
+                        <span data-i18n="about.download">Descargar CV completo</span>
                     </a>
                 </div>
-                <div class="about-cards reveal" data-stagger>
-                    <div class="glass-card">
-                        <div class="card-icon"><i class="fa-solid fa-user"></i></div>
-                        <h3 data-i18n="about.personal">Datos Personales</h3>
-                        <ul class="personal-data">
-                            <li><span class="data-label" data-i18n="about.phone">Teléfono</span><span>(+57) 3202594521</span></li>
-                            <li><span class="data-label" data-i18n="about.email">Email</span><span>juanmalaver1511@gmail.com</span></li>
-                            <li><span class="data-label" data-i18n="about.address">Dirección</span><span data-i18n="about.address_val">Tunja - Boyacá</span></li>
-                            <li><span class="data-label" data-i18n="about.role">Cargo</span><span class="tag" data-i18n="about.role_val">Ing. Sistemas</span></li>
-                        </ul>
-                    </div>
-                    <div class="glass-card">
-                        <div class="card-icon"><i class="fa-solid fa-star"></i></div>
-                        <h3 data-i18n="about.interests_title">Intereses</h3>
-                        <div class="interests-grid">
-                            <div class="interest-item"><i class="fa-solid fa-code"></i><span data-i18n="about.int_dev">Desarrollo</span></div>
-                            <div class="interest-item"><i class="fa-solid fa-graduation-cap"></i><span data-i18n="about.int_edu">Educación</span></div>
-                            <div class="interest-item"><i class="fa-solid fa-rocket"></i><span data-i18n="about.int_ent">Emprender</span></div>
-                            <div class="interest-item"><i class="fa-solid fa-gamepad"></i><span data-i18n="about.int_games">Juegos</span></div>
-                            <div class="interest-item"><i class="fa-solid fa-futbol"></i><span data-i18n="about.int_sports">Deportes</span></div>
-                            <div class="interest-item"><i class="fa-solid fa-music"></i><span data-i18n="about.int_music">Musica</span></div>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="skills" class="section skills">
-        <div class="section-container">
-            <div class="section-header reveal">
-                <span class="section-number">02.</span>
-                <h2 class="section-title" data-i18n="skills.title">Skills</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="skills-content">
-                <div class="skills-column reveal" data-stagger>
-                    <h3 class="skills-subtitle"><i class="fa-solid fa-microchip"></i> <span data-i18n="skills.tech">Tecnología</span></h3>
-                    <div class="skill-item">
-                        <div class="skill-info"><span data-i18n="skills.react">React</span><span class="skill-percent" data-target="80">0%</span></div>
-                        <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span data-i18n="skills.angular">Angular</span><span class="skill-percent" data-target="80">0%</span></div>
-                        <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span data-i18n="skills.typescript">TypeScript</span><span class="skill-percent" data-target="80">0%</span></div>
-                        <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span data-i18n="skills.javascript">JavaScript</span><span class="skill-percent" data-target="100">0%</span></div>
-                        <div class="skill-bar"><div class="skill-progress" data-width="100"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span data-i18n="skills.python">Python</span><span class="skill-percent" data-target="80">0%</span></div>
-                        <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span>HTML & CSS</span><span class="skill-percent" data-target="80">0%</span></div>
-                        <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span>Java</span><span class="skill-percent" data-target="60">0%</span></div>
-                        <div class="skill-bar"><div class="skill-progress" data-width="60"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span>MySQL</span><span class="skill-percent" data-target="59">0%</span></div>
-                        <div class="skill-bar"><div class="skill-progress" data-width="59"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span>Moodle</span><span class="skill-percent" data-target="60">0%</span></div>
-                        <div class="skill-bar"><div class="skill-progress" data-width="60"></div></div>
-                    </div>
-                </div>
-                <div class="skills-column reveal" data-stagger>
-                    <h3 class="skills-subtitle"><i class="fa-solid fa-briefcase"></i> <span data-i18n="skills.prof">Profesional</span></h3>
-                    <div class="skill-item">
-                        <div class="skill-info"><span data-i18n="skills.com">Comunicación</span><span class="skill-percent" data-target="100">0%</span></div>
-                        <div class="skill-bar"><div class="skill-progress" data-width="100"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span data-i18n="skills.team">Trabajo en equipo</span><span class="skill-percent" data-target="100">0%</span></div>
-                        <div class="skill-bar"><div class="skill-progress" data-width="100"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span data-i18n="skills.creativity">Creatividad</span><span class="skill-percent" data-target="100">0%</span></div>
-                        <div class="skill-bar"><div class="skill-progress" data-width="100"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span data-i18n="skills.dedication">Dedicación</span><span class="skill-percent" data-target="100">0%</span></div>
-                        <div class="skill-bar"><div class="skill-progress" data-width="100"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span data-i18n="skills.ai">Manejo de IA</span><span class="skill-percent" data-target="100">0%</span></div>
-                        <div class="skill-bar"><div class="skill-progress" data-width="100"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span data-i18n="skills.problems">Resolución de problemas</span><span class="skill-percent" data-target="100">0%</span></div>
-                        <div class="skill-bar"><div class="skill-progress" data-width="100"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span data-i18n="skills.leadership">Liderazgo</span><span class="skill-percent" data-target="100">0%</span></div>
-                        <div class="skill-bar"><div class="skill-progress" data-width="100"></div></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <section id="portafolio" class="section portfolio" aria-labelledby="portfolio-title">
+            <div class="container">
+                <header class="section-head reveal">
+                    <p class="eyebrow"><span class="eyebrow-index">04</span> <span data-i18n="portfolio.eyebrow">Portafolio</span></p>
+                    <h2 class="display" id="portfolio-title" data-i18n="portfolio.headline">Proyectos seleccionados.</h2>
+                    <p class="section-sub" data-i18n="portfolio.sub">
+                        Una muestra de sitios y aplicaciones en las que he trabajado, desde la interfaz hasta la lógica
+                        que las hace funcionar.
+                    </p>
+                </header>
 
-    <section id="curriculum" class="section curriculum">
-        <div class="section-container">
-            <div class="section-header reveal">
-                <span class="section-number">03.</span>
-                <h2 class="section-title" data-i18n="curriculum.title">Curriculum</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="timeline reveal" data-stagger>
-                <div class="timeline-column">
-                    <h3 class="timeline-heading"><i class="fa-solid fa-graduation-cap"></i> <span data-i18n="curriculum.edu">Educación</span></h3>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content glass-card">
-                            <span class="timeline-date">2023</span>
-                            <h4 data-i18n="curriculum.edu4_title">Curso SQL</h4>
-                            <span class="timeline-institution">DesafioLATAM</span>
+                <div class="project-featured-wrap reveal">
+                    <a class="project project-featured" href="https://juanmalaver1511.github.io/VillaEsperanza/" target="_blank" rel="noopener noreferrer">
+                        <div class="project-media">
+                            <img src="img/projects/villa-esperanza.jpg" alt="Captura del sitio web del Club Campestre Villa Esperanza" width="1366" height="520" loading="eager">
+                            <span class="project-open" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
                         </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content glass-card">
-                            <span class="timeline-date">2023</span>
-                            <h4 data-i18n="curriculum.edu3_title">Curso React JS</h4>
-                            <span class="timeline-institution">TinCode</span>
+                        <div class="project-body">
+                            <div class="project-meta">
+                                <span class="project-tag" data-i18n="portfolio.featured">Destacado</span>
+                                <span class="mono" aria-hidden="true">01 / 04</span>
+                            </div>
+                            <h3>Villa Esperanza</h3>
+                            <p data-i18n="portfolio.p1_desc">
+                                Sitio web para un club campestre: presenta servicios, eventos y canales de contacto
+                                en una experiencia visual y responsive.
+                            </p>
+                            <ul class="project-tech">
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>JavaScript</li>
+                            </ul>
+                            <span class="project-cta">
+                                <span data-i18n="portfolio.view">Ver proyecto</span>
+                                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                            </span>
                         </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content glass-card">
-                            <span class="timeline-date">2019 - 2023</span>
-                            <h4 data-i18n="curriculum.edu2_title">Ingeniero de sistemas</h4>
-                            <span class="timeline-institution" data-i18n="curriculum.edu2_inst">Universidad Juan de Castellanos</span>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content glass-card">
-                            <span class="timeline-date">2017 - 2018</span>
-                            <h4 data-i18n="curriculum.edu1_title">Técnico en Sistemas, mantenimiento y redes</h4>
-                            <span class="timeline-institution">UPTC</span>
-                        </div>
-                    </div>
+                    </a>
                 </div>
-                <div class="timeline-column">
-                    <h3 class="timeline-heading"><i class="fa-solid fa-briefcase"></i> <span data-i18n="curriculum.exp">Experiencia</span></h3>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content glass-card">
-                            <span class="timeline-date">2024 - Actual</span>
-                            <h4 data-i18n="curriculum.exp4_title">Profesional Soporte - Desarrollador</h4>
-                            <span class="timeline-institution" data-i18n="curriculum.exp4_inst">Universidad Santo Tomas Tunja</span>
-                            <p class="timeline-description" data-i18n="curriculum.exp4_desc">Ingeniero de Sistemas con rol de Profesional Soporte Tecnológico. Desarrollo web, administración de Moodle y gestión de plataformas virtuales.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content glass-card">
-                            <span class="timeline-date">2024 - Actual</span>
-                            <h4 data-i18n="curriculum.exp3_title">Founder - Desarrollador</h4>
-                            <span class="timeline-institution">NexusTech</span>
-                            <p class="timeline-description" data-i18n="curriculum.exp3_desc">Soy fundador de Nexustech, una startup que crea soluciones tecnológicas a la medida. Integramos inteligencia artificial, sistemas POS y tiendas en línea.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content glass-card">
-                            <span class="timeline-date">2023 - 2023</span>
-                            <h4 data-i18n="curriculum.exp2_title">Desarrollador FullStack Junior</h4>
-                            <span class="timeline-institution">MONOLEGAL</span>
-                            <p class="timeline-description" data-i18n="curriculum.exp2_desc">Realicé mi práctica profesional en Monolegal, aplicando mis habilidades en C#, MongoDB, JavaScript, HTML y Angular para contribuir al desarrollo de soluciones tecnológicas.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content glass-card">
-                            <span class="timeline-date">2023 - 2023</span>
-                            <h4 data-i18n="curriculum.exp1_title">Desarrollador de Software</h4>
-                            <span class="timeline-institution" data-i18n="curriculum.exp1_inst">Wheels GoGo</span>
-                            <p class="timeline-description" data-i18n="curriculum.exp1_desc">Desarrollador en Wheels GoGo, una startup innovadora. Experiencia en Flutter, CSS, React, HTML y JavaScript para crear soluciones móviles y web.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="portafolio" class="section portfolio">
-        <div class="section-container">
-            <div class="section-header reveal">
-                <span class="section-number">04.</span>
-                <h2 class="section-title" data-i18n="portfolio.title">Portafolio</h2>
-                <div class="section-line"></div>
+                <div class="project-grid reveal-stagger">
+                    <a class="project" href="https://juanmalaver1511.github.io/Naurema2/" target="_blank" rel="noopener noreferrer">
+                        <div class="project-media">
+                            <img src="img/projects/naurema.jpg" alt="Captura del sitio web de Naurema" width="950" height="580" loading="lazy">
+                            <span class="project-open" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta">
+                                <span class="project-tag" data-i18n="portfolio.p2_tag">Web · Landing</span>
+                                <span class="mono" aria-hidden="true">02</span>
+                            </div>
+                            <h3>Naurema</h3>
+                            <p data-i18n="portfolio.p2_desc">
+                                Landing page para una repostería artesanal, con una identidad cálida, secciones de
+                                producto y llamados a la acción claros.
+                            </p>
+                            <ul class="project-tech">
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>JavaScript</li>
+                            </ul>
+                            <span class="project-cta project-cta-small">
+                                <span data-i18n="portfolio.view">Ver proyecto</span>
+                                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </a>
+
+                    <a class="project" href="https://juanmalaver1511.github.io/Lista-de-Tareas.github.io/" target="_blank" rel="noopener noreferrer">
+                        <div class="project-media">
+                            <img src="img/projects/tareas.jpg" alt="Captura de la aplicación Lista de Tareas" width="966" height="588" loading="lazy">
+                            <span class="project-open" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta">
+                                <span class="project-tag" data-i18n="portfolio.p3_tag">Aplicación web</span>
+                                <span class="mono" aria-hidden="true">03</span>
+                            </div>
+                            <h3 data-i18n="portfolio.p3_title">Lista de Tareas</h3>
+                            <p data-i18n="portfolio.p3_desc">
+                                Aplicación para organizar tareas diarias con una interfaz directa y un flujo de trabajo
+                                sin fricción.
+                            </p>
+                            <ul class="project-tech">
+                                <li>JavaScript</li>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                            </ul>
+                            <span class="project-cta project-cta-small">
+                                <span data-i18n="portfolio.view">Ver proyecto</span>
+                                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </a>
+
+                    <a class="project" href="https://juanmalaver1511.github.io/comercio/" target="_blank" rel="noopener noreferrer">
+                        <div class="project-media">
+                            <img src="img/projects/gastos.jpg" alt="Captura de la aplicación Seguimiento de Gastos" width="700" height="588" loading="lazy">
+                            <span class="project-open" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta">
+                                <span class="project-tag" data-i18n="portfolio.p4_tag">Full Stack · React</span>
+                                <span class="mono" aria-hidden="true">04</span>
+                            </div>
+                            <h3 data-i18n="portfolio.p4_title">Seguimiento de Gastos</h3>
+                            <p data-i18n="portfolio.p4_desc">
+                                Panel para registrar ingresos y gastos, visualizar el balance y mantener el control de
+                                las finanzas personales.
+                            </p>
+                            <ul class="project-tech">
+                                <li>React</li>
+                                <li>JavaScript</li>
+                                <li>CSS</li>
+                            </ul>
+                            <span class="project-cta project-cta-small">
+                                <span data-i18n="portfolio.view">Ver proyecto</span>
+                                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </a>
+                </div>
             </div>
-            <div class="portfolio-grid reveal" data-stagger>
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <div class="portfolio-placeholder" style="background: linear-gradient(135deg, #00a6d4, #7b2ff7); display: flex; align-items: center; justify-content: center; height: 100%; font-size: 48px; color: rgba(255,255,255,0.3);"><i class="fa-solid fa-robot"></i></div>
-                        <div class="portfolio-overlay">
-                            <a href="https://campusvirtual.santototunja.edu.co/app/ChatIA/" class="portfolio-link" target="_blank">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="portfolio.view">Ver proyecto</span>
+        </section>
+
+        <section id="contacto" class="section contact" aria-labelledby="contact-title">
+            <div class="container">
+                <header class="contact-head reveal">
+                    <p class="eyebrow"><span class="eyebrow-index">05</span> <span data-i18n="contact.eyebrow">Contacto</span></p>
+                    <h2 class="display" id="contact-title" data-i18n="contact.headline">¿Trabajamos juntos?</h2>
+                    <p class="section-sub" data-i18n="contact.sub">
+                        Si tienes un proyecto, una vacante o simplemente quieres conversar sobre tecnología, escríbeme.
+                        Respondo normalmente en 24–48 horas.
+                    </p>
+                </header>
+
+                <div class="contact-grid">
+                    <div class="contact-side reveal">
+                        <a class="contact-line" href="mailto:juanmalaver1511@gmail.com">
+                            <span class="mono" data-i18n="contact.email">Email</span>
+                            <strong>juanmalaver1511@gmail.com</strong>
+                            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                        </a>
+                        <a class="contact-line" href="tel:+573202594521">
+                            <span class="mono" data-i18n="contact.phone">Teléfono</span>
+                            <strong>(+57) 320 259 4521</strong>
+                            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                        </a>
+                        <div class="contact-line contact-line-static">
+                            <span class="mono" data-i18n="contact.location">Ubicación</span>
+                            <strong data-i18n="contact.location_val">Tunja, Boyacá — Colombia</strong>
+                        </div>
+
+                        <p class="availability">
+                            <span class="status-dot" aria-hidden="true"></span>
+                            <span data-i18n="contact.availability">Disponible para nuevos proyectos</span>
+                        </p>
+
+                        <div class="contact-socials">
+                            <a class="text-link" href="https://www.linkedin.com/in/juan-manuel-malaver-5422a1151" target="_blank" rel="noopener noreferrer">
+                                LinkedIn <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                            </a>
+                            <a class="text-link" href="https://github.com/JuanMalaver1511" target="_blank" rel="noopener noreferrer">
+                                GitHub <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-tag" data-i18n="portfolio.tag1">AI</span>
-                        <h3 data-i18n="portfolio.proj1">Asistente IA</h3>
-                        <p data-i18n="portfolio.proj1_desc">Plataforma de inteligencia artificial</p>
-                    </div>
-                </div>
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <div class="portfolio-placeholder" style="background: linear-gradient(135deg, #7b2ff7, #ff6b35); display: flex; align-items: center; justify-content: center; height: 100%; font-size: 48px; color: rgba(255,255,255,0.3);"><i class="fa-solid fa-store"></i></div>
-                        <div class="portfolio-overlay">
-                            <a href="https://www.7nnoticias.com/new/" class="portfolio-link" target="_blank">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="portfolio.view">Ver proyecto</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-tag" data-i18n="portfolio.tag2">Web</span>
-                        <h3 data-i18n="portfolio.proj2">Noticias</h3>
-                        <p data-i18n="portfolio.proj2_desc">Plataforma de noticias</p>
-                    </div>
-                </div>
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <div class="portfolio-placeholder" style="background: linear-gradient(135deg, #ff6b35, #00a6d4); display: flex; align-items: center; justify-content: center; height: 100%; font-size: 48px; color: rgba(255,255,255,0.3);"><i class="fa-solid fa-mobile-screen"></i></div>
-                        <div class="portfolio-overlay">
-                            <a href="https://kyboapp.com" class="portfolio-link" target="_blank">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="portfolio.view">Ver proyecto</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-tag">App</span>
-                        <h3 data-i18n="portfolio.proj3">App Móvil</h3>
-                        <p data-i18n="portfolio.proj3_desc">Aplicación multiplataforma con Flutter</p>
-                    </div>
-                </div>
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <div class="portfolio-placeholder" style="background: linear-gradient(135deg, #00a6d4, #00d4aa); display: flex; align-items: center; justify-content: center; height: 100%; font-size: 48px; color: rgba(255,255,255,0.3);"><i class="fa-solid fa-chart-line"></i></div>
-                        <div class="portfolio-overlay">
-                            <a href="#" class="portfolio-link" target="_blank">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="portfolio.view">Ver proyecto</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-tag">Data</span>
-                        <h3 data-i18n="portfolio.proj4">Dashboard Analytics</h3>
-                        <p data-i18n="portfolio.proj4_desc">Panel de análisis con Python y React</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="contacto" class="section contact">
-        <div class="section-container">
-            <div class="section-header reveal">
-                <span class="section-number">05.</span>
-                <h2 class="section-title" data-i18n="contact.title">Contacto</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="contact-content reveal">
-                <div class="contact-info">
-                    <div class="glass-card contact-card">
-                        <i class="fa-solid fa-envelope"></i>
-                        <h3 data-i18n="contact.email_head">Email</h3>
-                        <p>juanmalaver1511@gmail.com</p>
-                    </div>
-                    <div class="glass-card contact-card">
-                        <i class="fa-solid fa-phone"></i>
-                        <h3 data-i18n="contact.phone_head">Teléfono</h3>
-                        <p>(+57) 3202594521</p>
-                    </div>
-                    <div class="glass-card contact-card">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <h3 data-i18n="contact.location_head">Ubicación</h3>
-                        <p data-i18n="contact.location_val">Tunja - Boyacá</p>
-                    </div>
-                </div>
-                <form action="https://formsubmit.co/juanmalaver1511@gmail.com" method="POST" class="contact-form glass-card">
-                    <h3 data-i18n="contact.form_title">Envíame un mensaje</h3>
-                    <div class="form-group">
-                        <input type="text" name="name" id="name" required data-i18n-placeholder="contact.name_ph">
-                        <i class="fa-solid fa-user form-icon"></i>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="phone" id="phone" data-i18n-placeholder="contact.phone_ph">
-                        <i class="fa-solid fa-phone form-icon"></i>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="email" id="email" required data-i18n-placeholder="contact.email_ph">
-                        <i class="fa-solid fa-envelope form-icon"></i>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="subject" id="subject" data-i18n-placeholder="contact.subject_ph">
-                        <i class="fa-solid fa-tag form-icon"></i>
-                    </div>
-                    <div class="form-group">
-                        <textarea name="coments" id="coments" cols="30" rows="5" data-i18n-placeholder="contact.msg_ph"></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary btn-submit">
-                        <span data-i18n="contact.send">Enviar Mensaje</span> <i class="fa-solid fa-paper-plane"></i>
-                    </button>
-                    <input type="hidden" name="_next" value="https://juanmalaver1511.github.io/Portafolio-Juan/#contacto">
-                    <input type="hidden" name="_captcha" value="false">
-                </form>
-            </div>
-        </div>
-    </section>
+                    <form class="contact-form reveal" action="https://formsubmit.co/juanmalaver1511@gmail.com" method="POST">
+                        <div class="form-head">
+                            <h3 data-i18n="contact.form_title">Envíame un mensaje</h3>
+                            <p data-i18n="contact.form_sub">Cuéntame brevemente sobre tu idea o propuesta.</p>
+                        </div>
 
-    <footer class="footer">
-        <div class="footer-container">
-            <a href="#inicio" class="footer-top" aria-label="Volver arriba">
-                <i class="fa-solid fa-chevron-up"></i>
-            </a>
-            <div class="footer-socials">
-                <a href="https://www.linkedin.com/in/juan-manuel-malaver-5422a1151" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="https://github.com/JuanMalaver1511" class="social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#" class="social-icon" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <div class="form-row">
+                            <div class="field">
+                                <label for="name" data-i18n="contact.name">Nombre</label>
+                                <input type="text" id="name" name="name" autocomplete="name" required data-i18n-placeholder="contact.name_ph" placeholder="Tu nombre">
+                            </div>
+                            <div class="field">
+                                <label for="email" data-i18n="contact.email_label">Email</label>
+                                <input type="email" id="email" name="email" autocomplete="email" required data-i18n-placeholder="contact.email_ph" placeholder="tu@email.com">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="field">
+                                <label for="phone" data-i18n="contact.phone_label">Teléfono</label>
+                                <input type="tel" id="phone" name="phone" autocomplete="tel" data-i18n-placeholder="contact.phone_ph" placeholder="+57 300 000 0000">
+                            </div>
+                            <div class="field">
+                                <label for="subject" data-i18n="contact.subject">Asunto</label>
+                                <input type="text" id="subject" name="subject" data-i18n-placeholder="contact.subject_ph" placeholder="¿En qué puedo ayudarte?">
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label for="message" data-i18n="contact.message">Mensaje</label>
+                            <textarea id="message" name="message" rows="5" required data-i18n-placeholder="contact.message_ph" placeholder="Escribe tu mensaje..."></textarea>
+                        </div>
+
+                        <button class="btn btn-primary btn-submit" type="submit">
+                            <span data-i18n="contact.send">Enviar mensaje</span>
+                            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                        </button>
+
+                        <p class="form-note" data-i18n="contact.note">
+                            También puedes escribirme directamente a juanmalaver1511@gmail.com
+                        </p>
+
+                        <input type="hidden" name="_next" value="https://juanmalaver1511.github.io/Portafolio-Juan/#contacto">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_subject" value="Nuevo mensaje desde el portafolio">
+                    </form>
+                </div>
             </div>
-            <p class="footer-text" data-i18n="footer.text">const &copy; 2024 = &lt;Juan Malaver /&gt;</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <span class="brand-mark" aria-hidden="true">JM</span>
+                <div>
+                    <p class="footer-name">Juan Malaver</p>
+                    <p class="footer-copy">© <span id="year">2026</span> · <span data-i18n="footer.rights">Todos los derechos reservados.</span></p>
+                </div>
+            </div>
+
+            <p class="footer-built" data-i18n="footer.built">Diseñado y desarrollado por Juan Malaver.</p>
+
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/juan-manuel-malaver-5422a1151" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+                <a href="https://github.com/JuanMalaver1511" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+                <a class="back-top" href="#inicio" data-i18n-aria-label="aria.top" aria-label="Volver arriba">
+                    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+                </a>
+            </div>
         </div>
     </footer>
 

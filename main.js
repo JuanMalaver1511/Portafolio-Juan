@@ -3,432 +3,577 @@
    ============================================= */
 const i18n = {
     es: {
-        page: { title: 'Juan Malaver | Ingeniero de Sistemas' },
-        nav: { inicio: 'Inicio', sobremi: 'Sobre Mí', skills: 'Skills', curriculum: 'Curriculum', portafolio: 'Portafolio', contacto: 'Contacto' },
-        hero: { terminal: './greet --name="Juan Malaver"', description: 'Full Stack Developer • Ingeniero de Sistemas • Innovador', scroll: 'Desplázate' },
+        page: { title: 'Juan Malaver — Ingeniero de Sistemas & Full Stack Developer' },
+        a11y: { skip: 'Saltar al contenido' },
+        brand: { role: 'Ing. de Sistemas · Full Stack' },
+        nav: {
+            inicio: 'Inicio',
+            sobremi: 'Sobre mí',
+            skills: 'Skills',
+            curriculum: 'Trayectoria',
+            portafolio: 'Proyectos',
+            contacto: 'Contacto'
+        },
+        hero: {
+            availability: 'Disponible para nuevos proyectos',
+            location: 'Tunja, Colombia',
+            description: 'Ingeniero de Sistemas y desarrollador full stack. Diseño y construyo experiencias web claras, rápidas y funcionales, con atención al detalle y foco en las personas.',
+            cta_projects: 'Ver proyectos',
+            cta_cv: 'Descargar CV',
+            email: 'Email',
+            note: 'Abierto a oportunidades full stack y proyectos de producto.',
+            portrait_role: 'Full Stack Developer · Ingeniero de Sistemas',
+            scroll: 'Desplázate'
+        },
         about: {
-            title: 'Sobre Mí', hello: 'Hola, soy Juan Malaver',
-            desc: 'un apasionado desarrollador full stack con un sólido dominio de una variedad de tecnologías, incluyendo C#, Python, TypeScript, Angular, MongoDB, Java, JavaScript, HTML, CSS y más. Mi enfoque principal es crear soluciones web innovadoras y funcionales que ofrezcan una experiencia excepcional a los usuarios. Estoy comprometido con el aprendizaje continuo y la mejora constante, lo que me motiva a mantenerme actualizado en las últimas tendencias tecnológicas y las mejores prácticas de desarrollo.',
-            download: 'Descargar CV', personal: 'Datos Personales', phone: 'Teléfono', email: 'Email', address: 'Dirección',
-            address_val: 'Tunja - Boyacá', role: 'Cargo', role_val: 'Ing. Sistemas', interests_title: 'Intereses',
-            int_dev: 'Desarrollo', int_edu: 'Educación', int_ent: 'Emprender', int_games: 'Juegos', int_sports: 'Deportes', int_music: 'Musica'
+            eyebrow: 'Sobre mí',
+            headline: 'Ingeniería con foco en las personas.',
+            hello: 'Hola, soy Juan Malaver.',
+            desc1: 'Soy desarrollador full stack e Ingeniero de Sistemas. Trabajo con C#, Python, TypeScript, Angular, MongoDB, Java, JavaScript, HTML y CSS, creando soluciones web innovadoras, funcionales y bien pensadas.',
+            desc2: 'Actualmente me desempeño como Profesional Soporte - Desarrollador en la Universidad Santo Tomás, donde combino desarrollo web, administración de Moodle y gestión de plataformas virtuales. Me mueve el aprendizaje continuo, la mejora constante y el trabajo en equipo.',
+            stat1: 'Años de experiencia',
+            stat2: 'Tecnologías y herramientas',
+            stat3: 'Proyectos destacados',
+            quote: '“Me interesa construir software claro, útil y sostenible en el tiempo.”',
+            profile: 'Perfil',
+            location: 'Ubicación',
+            location_val: 'Tunja, Boyacá — Colombia',
+            email: 'Email',
+            phone: 'Teléfono',
+            role: 'Rol',
+            role_val: 'Ing. de Sistemas · Full Stack',
+            download: 'Descargar CV completo',
+            interests: 'Intereses',
+            int_dev: 'Desarrollo',
+            int_edu: 'Educación',
+            int_ent: 'Emprender',
+            int_games: 'Juegos',
+            int_sports: 'Deportes',
+            int_music: 'Música'
         },
         skills: {
-            title: 'Skills', tech: 'Tecnología', prof: 'Profesional',
-            react: 'React', angular: 'Angular', typescript: 'TypeScript', javascript: 'JavaScript', python: 'Python',
-            com: 'Comunicación', team: 'Trabajo en equipo', creativity: 'Creatividad', dedication: 'Dedicación',
-            ai: 'Manejo de IA', problems: 'Resolución de problemas', leadership: 'Liderazgo'
+            eyebrow: 'Capacidades',
+            headline: 'Herramientas para resolver problemas reales.',
+            sub: 'Tecnologías que uso para construir interfaces, servicios y plataformas, complementadas con habilidades para colaborar, comunicar y aprender.',
+            frontend: 'Frontend',
+            frontend_desc: 'Interfaces responsivas, accesibles y cuidadas al detalle.',
+            backend: 'Backend & datos',
+            backend_desc: 'Lógica de negocio, APIs y modelado de información.',
+            platforms: 'Plataformas & soporte',
+            platforms_desc: 'Administración de entornos, Moodle y soporte tecnológico.',
+            ai: 'IA aplicada',
+            it: 'Soporte TI',
+            networks: 'Redes',
+            soft: 'Competencias transversales',
+            com: 'Comunicación',
+            team: 'Trabajo en equipo',
+            creativity: 'Creatividad',
+            dedication: 'Dedicación',
+            ai_management: 'Manejo de IA',
+            problems: 'Resolución de problemas',
+            leadership: 'Liderazgo'
         },
         curriculum: {
-            title: 'Curriculum', edu: 'Educación', exp: 'Experiencia',
-            edu1_title: 'Técnico en Sistemas, mantenimiento y redes',
-            edu2_title: 'Ingeniero de sistemas', edu2_inst: 'Universidad Juan de Castellanos',
-            edu3_title: 'Curso React JS', edu4_title: 'Curso SQL',
-            exp1_title: 'Desarrollador de Software', exp1_inst: 'Wheels GoGo',
-            exp1_desc: 'Desarrollador en Wheels GoGo, una startup innovadora. Experiencia en Flutter, CSS, React, HTML y JavaScript para crear soluciones móviles y web.',
+            eyebrow: 'Trayectoria',
+            headline: 'Experiencia y formación.',
+            sub: 'Un recorrido por los equipos, instituciones y proyectos que han dado forma a mi perfil profesional.',
+            exp: 'Experiencia',
+            edu: 'Educación',
+            exp1_date: '2024 — Actualidad',
+            exp1_title: 'Profesional Soporte - Desarrollador',
+            exp1_org: 'Universidad Santo Tomás · Tunja',
+            exp1_desc: 'Desarrollo web, administración de Moodle y gestión de plataformas virtuales, combinando soporte tecnológico con mejora continua de los servicios.',
             exp2_title: 'Desarrollador FullStack Junior',
-            exp2_desc: 'Realicé mi práctica profesional en Monolegal, aplicando mis habilidades en C#, MongoDB, JavaScript, HTML y Angular para contribuir al desarrollo de soluciones tecnológicas.',
-            exp3_title: 'Founder - Desarrollador',
-            exp3_desc: 'Soy fundador de Nexustech, una startup que crea soluciones tecnológicas a la medida. Integramos inteligencia artificial, sistemas POS y tiendas en línea.',
-            exp4_title: 'Profesional Soporte - Desarrollador', exp4_inst: 'Universidad Santo Tomas Tunja',
-            exp4_desc: 'Ingeniero de Sistemas con rol de Profesional Soporte Tecnológico. Desarrollo web, administración de Moodle y gestión de plataformas virtuales.'
+            exp2_desc: 'Práctica profesional aplicando C#, MongoDB, JavaScript, HTML y Angular para contribuir al desarrollo de soluciones tecnológicas.',
+            exp3_title: 'Desarrollador de Software',
+            exp3_desc: 'Desarrollo de soluciones móviles y web con Flutter, CSS, React, HTML y JavaScript en un entorno de startup.',
+            edu1_title: 'Ingeniero de Sistemas',
+            edu1_org: 'Universidad Juan de Castellanos',
+            edu2_title: 'Técnico en Sistemas, mantenimiento y redes',
+            edu3_title: 'Curso React JS',
+            edu4_title: 'Curso SQL',
+            cta_text: '¿Quieres ver el detalle completo de mi experiencia?'
         },
         portfolio: {
-            title: 'Portafolio', view: 'Ver proyecto',
-            tag1: 'AI', proj1: 'Sistema IA', proj1_desc: 'Plataforma de inteligencia artificial',
-            tag2: 'Web', proj2: 'E-commerce', proj2_desc: 'Tienda online con Angular y Node.js',
-            proj3: 'App Móvil', proj3_desc: 'Aplicación multiplataforma con Flutter',
-            proj4: 'Dashboard Analytics', proj4_desc: 'Panel de análisis con Python y React'
+            eyebrow: 'Portafolio',
+            headline: 'Proyectos seleccionados.',
+            sub: 'Una muestra de sitios y aplicaciones en las que he trabajado, desde la interfaz hasta la lógica que las hace funcionar.',
+            featured: 'Destacado',
+            view: 'Ver proyecto',
+            p1_desc: 'Sitio web para un club campestre: presenta servicios, eventos y canales de contacto en una experiencia visual y responsive.',
+            p2_tag: 'Web · Landing',
+            p2_desc: 'Landing page para una repostería artesanal, con una identidad cálida, secciones de producto y llamados a la acción claros.',
+            p3_tag: 'Aplicación web',
+            p3_title: 'Lista de Tareas',
+            p3_desc: 'Aplicación para organizar tareas diarias con una interfaz directa y un flujo de trabajo sin fricción.',
+            p4_tag: 'Full Stack · React',
+            p4_title: 'Seguimiento de Gastos',
+            p4_desc: 'Panel para registrar ingresos y gastos, visualizar el balance y mantener el control de las finanzas personales.'
         },
         contact: {
-            title: 'Contacto', email_head: 'Email', phone_head: 'Teléfono', location_head: 'Ubicación',
-            location_val: 'Tunja - Boyacá', form_title: 'Envíame un mensaje',
-            name_ph: 'Tu Nombre', phone_ph: 'Número telefónico', email_ph: 'Email', subject_ph: 'Tema', msg_ph: 'Mensaje',
-            send: 'Enviar Mensaje'
+            eyebrow: 'Contacto',
+            headline: '¿Trabajamos juntos?',
+            sub: 'Si tienes un proyecto, una vacante o simplemente quieres conversar sobre tecnología, escríbeme. Respondo normalmente en 24–48 horas.',
+            email: 'Email',
+            phone: 'Teléfono',
+            location: 'Ubicación',
+            location_val: 'Tunja, Boyacá — Colombia',
+            availability: 'Disponible para nuevos proyectos',
+            form_title: 'Envíame un mensaje',
+            form_sub: 'Cuéntame brevemente sobre tu idea o propuesta.',
+            name: 'Nombre',
+            name_ph: 'Tu nombre',
+            email_label: 'Email',
+            email_ph: 'tu@email.com',
+            phone_label: 'Teléfono',
+            phone_ph: '+57 300 000 0000',
+            subject: 'Asunto',
+            subject_ph: '¿En qué puedo ayudarte?',
+            message: 'Mensaje',
+            message_ph: 'Escribe tu mensaje...',
+            send: 'Enviar mensaje',
+            note: 'También puedes escribirme directamente a juanmalaver1511@gmail.com'
         },
-        footer: { text: 'const © 2024 = <Juan Malaver />' },
-        typing: ['Ingeniero de Sistemas', 'Full Stack Developer', 'Founder en NexusTech']
+        footer: {
+            rights: 'Todos los derechos reservados.',
+            built: 'Diseñado y desarrollado por Juan Malaver.'
+        },
+        aria: {
+            nav: 'Navegación principal',
+            lang: 'Cambiar idioma',
+            theme: 'Cambiar tema',
+            menu: 'Abrir menú',
+            menu_close: 'Cerrar menú',
+            top: 'Volver arriba',
+            portrait: 'Retrato y perfil',
+            stack: 'Tecnologías principales'
+        },
+        typing: ['Ingeniero de Sistemas', 'Desarrollador Full Stack', 'Construyendo experiencias digitales']
     },
     en: {
-        page: { title: 'Juan Malaver | Systems Engineer' },
-        nav: { inicio: 'Home', sobremi: 'About Me', skills: 'Skills', curriculum: 'Resume', portafolio: 'Portfolio', contacto: 'Contact' },
-        hero: { terminal: './greet --name="Juan Malaver"', description: 'Full Stack Developer • Systems Engineer • Innovator', scroll: 'Scroll down' },
+        page: { title: 'Juan Malaver — Systems Engineer & Full Stack Developer' },
+        a11y: { skip: 'Skip to content' },
+        brand: { role: 'Systems Eng. · Full Stack' },
+        nav: {
+            inicio: 'Home',
+            sobremi: 'About',
+            skills: 'Skills',
+            curriculum: 'Experience',
+            portafolio: 'Projects',
+            contacto: 'Contact'
+        },
+        hero: {
+            availability: 'Available for new projects',
+            location: 'Tunja, Colombia',
+            description: 'Systems Engineer and full stack developer. I design and build clear, fast and functional web experiences, with attention to detail and a people-first approach.',
+            cta_projects: 'View projects',
+            cta_cv: 'Download CV',
+            email: 'Email',
+            note: 'Open to full stack roles and product projects.',
+            portrait_role: 'Full Stack Developer · Systems Engineer',
+            scroll: 'Scroll'
+        },
         about: {
-            title: 'About Me', hello: 'Hi, I\'m Juan Malaver',
-            desc: 'a passionate full stack developer with strong proficiency in a variety of technologies including C#, Python, TypeScript, Angular, MongoDB, Java, JavaScript, HTML, CSS and more. My main focus is creating innovative and functional web solutions that deliver an exceptional user experience. I am committed to continuous learning and constant improvement, which motivates me to stay updated with the latest technology trends and best development practices.',
-            download: 'Download CV', personal: 'Personal Data', phone: 'Phone', email: 'Email', address: 'Address',
-            address_val: 'Tunja - Boyacá', role: 'Role', role_val: 'Systems Eng.', interests_title: 'Interests',
-            int_dev: 'Development', int_edu: 'Education', int_ent: 'Entrepreneurship', int_games: 'Gaming', int_sports: 'Sports', int_music: 'Music'
+            eyebrow: 'About me',
+            headline: 'Engineering with people in mind.',
+            hello: 'Hi, I\'m Juan Malaver.',
+            desc1: 'I\'m a full stack developer and Systems Engineer. I work with C#, Python, TypeScript, Angular, MongoDB, Java, JavaScript, HTML and CSS, creating innovative, functional and well-thought-out web solutions.',
+            desc2: 'I currently work as a Support Professional - Developer at Santo Tomás University, combining web development, Moodle administration and virtual platform management. I\'m driven by continuous learning, constant improvement and teamwork.',
+            stat1: 'Years of experience',
+            stat2: 'Technologies and tools',
+            stat3: 'Featured projects',
+            quote: '“I\'m interested in building software that is clear, useful and sustainable over time.”',
+            profile: 'Profile',
+            location: 'Location',
+            location_val: 'Tunja, Boyacá — Colombia',
+            email: 'Email',
+            phone: 'Phone',
+            role: 'Role',
+            role_val: 'Systems Eng. · Full Stack',
+            download: 'Download full CV',
+            interests: 'Interests',
+            int_dev: 'Development',
+            int_edu: 'Education',
+            int_ent: 'Entrepreneurship',
+            int_games: 'Gaming',
+            int_sports: 'Sports',
+            int_music: 'Music'
         },
         skills: {
-            title: 'Skills', tech: 'Technology', prof: 'Professional',
-            react: 'React', angular: 'Angular', typescript: 'TypeScript', javascript: 'JavaScript', python: 'Python',
-            com: 'Communication', team: 'Teamwork', creativity: 'Creativity', dedication: 'Dedication',
-            ai: 'AI Management', problems: 'Problem Solving', leadership: 'Leadership'
+            eyebrow: 'Capabilities',
+            headline: 'Tools to solve real problems.',
+            sub: 'Technologies I use to build interfaces, services and platforms, complemented by skills for collaboration, communication and learning.',
+            frontend: 'Frontend',
+            frontend_desc: 'Responsive, accessible interfaces with attention to detail.',
+            backend: 'Backend & data',
+            backend_desc: 'Business logic, APIs and information modeling.',
+            platforms: 'Platforms & support',
+            platforms_desc: 'Environment administration, Moodle and technology support.',
+            ai: 'Applied AI',
+            it: 'IT Support',
+            networks: 'Networks',
+            soft: 'Soft skills',
+            com: 'Communication',
+            team: 'Teamwork',
+            creativity: 'Creativity',
+            dedication: 'Dedication',
+            ai_management: 'AI fluency',
+            problems: 'Problem solving',
+            leadership: 'Leadership'
         },
         curriculum: {
-            title: 'Resume', edu: 'Education', exp: 'Experience',
-            edu1_title: 'Systems Technician, maintenance and networks',
-            edu2_title: 'Systems Engineer', edu2_inst: 'Juan de Castellanos University',
-            edu3_title: 'React JS Course', edu4_title: 'SQL Course',
-            exp1_title: 'Software Developer', exp1_inst: 'Wheels GoGo',
-            exp1_desc: 'Developer at Wheels GoGo, an innovative startup. Experience with Flutter, CSS, React, HTML and JavaScript for mobile and web solutions.',
-            exp2_title: 'FullStack Junior Developer',
-            exp2_desc: 'Professional internship at Monolegal, applying skills in C#, MongoDB, JavaScript, HTML and Angular to contribute to technological solutions development.',
-            exp3_title: 'Founder - Developer',
-            exp3_desc: 'Founder of Nexustech, a startup creating custom technological solutions. We integrate artificial intelligence, POS systems and online stores.',
-            exp4_title: 'Support Professional - Developer', exp4_inst: 'Santo Tomas University Tunja',
-            exp4_desc: 'Systems Engineer with Technology Support role. Web development, Moodle administration, and virtual platform management.'
+            eyebrow: 'Background',
+            headline: 'Experience & education.',
+            sub: 'A journey through the teams, institutions and projects that have shaped my professional profile.',
+            exp: 'Experience',
+            edu: 'Education',
+            exp1_date: '2024 — Present',
+            exp1_title: 'Support Professional - Developer',
+            exp1_org: 'Santo Tomás University · Tunja',
+            exp1_desc: 'Web development, Moodle administration and virtual platform management, combining technology support with continuous service improvement.',
+            exp2_title: 'Junior Full Stack Developer',
+            exp2_desc: 'Professional internship applying C#, MongoDB, JavaScript, HTML and Angular to contribute to the development of technology solutions.',
+            exp3_title: 'Software Developer',
+            exp3_desc: 'Development of mobile and web solutions with Flutter, CSS, React, HTML and JavaScript in a startup environment.',
+            edu1_title: 'Systems Engineer',
+            edu1_org: 'Juan de Castellanos University',
+            edu2_title: 'Systems Technician, maintenance and networks',
+            edu3_title: 'React JS Course',
+            edu4_title: 'SQL Course',
+            cta_text: 'Want to see the full detail of my experience?'
         },
         portfolio: {
-            title: 'Portfolio', view: 'View project',
-            tag1: 'AI', proj1: 'AI System', proj1_desc: 'Artificial intelligence platform',
-            tag2: 'Web', proj2: 'E-commerce', proj2_desc: 'Online store with Angular and Node.js',
-            proj3: 'Mobile App', proj3_desc: 'Cross-platform app with Flutter',
-            proj4: 'Dashboard Analytics', proj4_desc: 'Analytics dashboard with Python and React'
+            eyebrow: 'Portfolio',
+            headline: 'Selected projects.',
+            sub: 'A selection of websites and applications I have worked on, from the interface to the logic that makes them work.',
+            featured: 'Featured',
+            view: 'View project',
+            p1_desc: 'Website for a countryside club: services, events and contact channels presented through a visual, responsive experience.',
+            p2_tag: 'Web · Landing',
+            p2_desc: 'Landing page for an artisan bakery, with a warm identity, product sections and clear calls to action.',
+            p3_tag: 'Web app',
+            p3_title: 'Task List',
+            p3_desc: 'An application for organizing daily tasks with a straightforward interface and a frictionless workflow.',
+            p4_tag: 'Full Stack · React',
+            p4_title: 'Expense Tracker',
+            p4_desc: 'A dashboard to record income and expenses, visualize the balance and stay in control of personal finances.'
         },
         contact: {
-            title: 'Contact', email_head: 'Email', phone_head: 'Phone', location_head: 'Location',
-            location_val: 'Tunja - Boyacá', form_title: 'Send me a message',
-            name_ph: 'Your Name', phone_ph: 'Phone number', email_ph: 'Email', subject_ph: 'Subject', msg_ph: 'Message',
-            send: 'Send Message'
+            eyebrow: 'Contact',
+            headline: 'Let\'s work together.',
+            sub: 'If you have a project, a job opening or simply want to talk about technology, write to me. I usually reply within 24–48 hours.',
+            email: 'Email',
+            phone: 'Phone',
+            location: 'Location',
+            location_val: 'Tunja, Boyacá — Colombia',
+            availability: 'Available for new projects',
+            form_title: 'Send me a message',
+            form_sub: 'Tell me briefly about your idea or proposal.',
+            name: 'Name',
+            name_ph: 'Your name',
+            email_label: 'Email',
+            email_ph: 'you@email.com',
+            phone_label: 'Phone',
+            phone_ph: '+57 300 000 0000',
+            subject: 'Subject',
+            subject_ph: 'How can I help?',
+            message: 'Message',
+            message_ph: 'Write your message...',
+            send: 'Send message',
+            note: 'You can also write to me directly at juanmalaver1511@gmail.com'
         },
-        footer: { text: 'const © 2024 = <Juan Malaver />' },
-        typing: ['Systems Engineer', 'Full Stack Developer', 'Founder at NexusTech']
+        footer: {
+            rights: 'All rights reserved.',
+            built: 'Designed and developed by Juan Malaver.'
+        },
+        aria: {
+            nav: 'Main navigation',
+            lang: 'Toggle language',
+            theme: 'Toggle theme',
+            menu: 'Open menu',
+            menu_close: 'Close menu',
+            top: 'Back to top',
+            portrait: 'Portrait and profile',
+            stack: 'Core technologies'
+        },
+        typing: ['Systems Engineer', 'Full Stack Developer', 'Building digital experiences']
     }
 };
 
 /* =============================================
-   THEME
+   LANGUAGE & THEME
    ============================================= */
-(function initTheme() {
-    const saved = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    document.documentElement.setAttribute('data-theme', saved || (prefersDark ? 'dark' : 'light'));
-})();
-
-function toggleTheme() {
-    const html = document.documentElement;
-    const next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-    html.setAttribute('data-theme', next);
-    localStorage.setItem('theme', next);
+let currentLang = 'es';
+try {
+    currentLang = localStorage.getItem('lang') || 'es';
+} catch (error) {
+    currentLang = 'es';
 }
+if (!i18n[currentLang]) currentLang = 'es';
 
-/* =============================================
-   LANGUAGE
-   ============================================= */
-let currentLang = localStorage.getItem('lang') || 'es';
+const root = document.documentElement;
+const menuToggle = document.querySelector('.menu-toggle');
+const nav = document.getElementById('primary-nav');
+const header = document.getElementById('site-header');
+const typingElement = document.getElementById('typing-text');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
 let typingRestart = null;
 
-(function initLang() {
+function getTranslation(key) {
+    return key.split('.').reduce((value, part) => value && value[part], i18n[currentLang]);
+}
+
+function updateMenuLabel(isOpen) {
+    if (!menuToggle) return;
+    const key = isOpen ? 'aria.menu_close' : 'aria.menu';
+    menuToggle.setAttribute('aria-label', getTranslation(key));
+}
+
+function applyTranslations() {
+    const translations = i18n[currentLang];
+
+    document.querySelectorAll('[data-i18n]').forEach((element) => {
+        const value = getTranslation(element.dataset.i18n);
+        if (value !== undefined) element.textContent = value;
+    });
+
+    document.querySelectorAll('[data-i18n-placeholder]').forEach((element) => {
+        const value = getTranslation(element.dataset.i18nPlaceholder);
+        if (value !== undefined) element.placeholder = value;
+    });
+
+    document.querySelectorAll('[data-i18n-aria-label]').forEach((element) => {
+        const value = getTranslation(element.dataset.i18nAriaLabel);
+        if (value !== undefined) element.setAttribute('aria-label', value);
+    });
+
+    document.documentElement.lang = currentLang;
     document.documentElement.setAttribute('data-lang', currentLang);
-    applyTranslations();
-})();
+    document.title = translations.page.title;
+
+    const langCurrent = document.querySelector('.lang-current');
+    const langOther = document.querySelector('.lang-other');
+    if (langCurrent) langCurrent.textContent = currentLang.toUpperCase();
+    if (langOther) langOther.textContent = currentLang === 'es' ? 'EN' : 'ES';
+
+    updateMenuLabel(document.body.classList.contains('nav-open'));
+}
 
 function toggleLang() {
     currentLang = currentLang === 'es' ? 'en' : 'es';
-    document.documentElement.setAttribute('data-lang', currentLang);
-    localStorage.setItem('lang', currentLang);
+    try {
+        localStorage.setItem('lang', currentLang);
+    } catch (error) {
+        /* Storage may be unavailable; the language still changes for this visit. */
+    }
     applyTranslations();
     if (typingRestart) typingRestart();
 }
 
-function applyTranslations() {
-    const t = i18n[currentLang];
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.dataset.i18n;
-        const val = key.split('.').reduce((obj, k) => obj && obj[k], t);
-        if (val !== undefined) el.textContent = val;
-    });
-    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-        const key = el.dataset.i18nPlaceholder;
-        const val = key.split('.').reduce((obj, k) => obj && obj[k], t);
-        if (val !== undefined) el.placeholder = val;
-    });
-    document.title = t.page.title;
+function toggleTheme() {
+    const nextTheme = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    root.setAttribute('data-theme', nextTheme);
+    try {
+        localStorage.setItem('theme', nextTheme);
+    } catch (error) {
+        /* The theme still changes for this visit. */
+    }
 }
 
-/* =============================================
-   SCROLL PROGRESS BAR
-   ============================================= */
-(function scrollProgress() {
-    const bar = document.getElementById('scroll-progress');
-    if (!bar) return;
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-        if (!ticking) {
-            requestAnimationFrame(() => {
-                const scrollTop = window.scrollY;
-                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-                const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-                bar.style.width = progress + '%';
-                ticking = false;
-            });
-            ticking = true;
-        }
-    });
-})();
+document.querySelector('.lang-toggle').addEventListener('click', toggleLang);
+document.querySelector('.theme-toggle').addEventListener('click', toggleTheme);
 
-/* =============================================
-   HERO ENTRANCE ANIMATION
-   ============================================= */
-(function heroEntrance() {
-    const hero = document.querySelector('.hero');
-    if (!hero) return;
-    requestAnimationFrame(() => {
-        hero.classList.add('hero-entrance');
-    });
-})();
-
-/* =============================================
-   RIPPLE EFFECT ON BUTTONS
-   ============================================= */
-(function initRipple() {
-    document.querySelectorAll('.btn-primary').forEach(btn => {
-        btn.addEventListener('click', function (e) {
-            const rect = this.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const size = Math.max(rect.width, rect.height) * 2;
-            const ripple = document.createElement('span');
-            ripple.className = 'ripple';
-            ripple.style.width = ripple.style.height = size + 'px';
-            ripple.style.left = x - size / 2 + 'px';
-            ripple.style.top = y - size / 2 + 'px';
-            this.appendChild(ripple);
-            setTimeout(() => ripple.remove(), 600);
-        });
-    });
-})();
-
-/* =============================================
-   PARTICLE NETWORK
-   ============================================= */
-(function initParticles() {
-    const canvas = document.getElementById('particles-canvas');
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    let particles = [];
-    let mouse = { x: null, y: null };
-
-    function resize() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resize);
-    resize();
-
-    document.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
-    document.addEventListener('mouseleave', () => { mouse.x = null; mouse.y = null; });
-
-    class Particle {
-        constructor() { this.reset(); }
-        reset() {
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
-            this.size = Math.random() * 2 + 0.5;
-            this.speedX = (Math.random() - 0.5) * 0.4;
-            this.speedY = (Math.random() - 0.5) * 0.4;
-            this.opacity = Math.random() * 0.4 + 0.1;
-        }
-        update() {
-            this.x += this.speedX;
-            this.y += this.speedY;
-            if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-            if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-            const dx = this.x - mouse.x;
-            const dy = this.y - mouse.y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < 120) {
-                const force = (120 - dist) / 120;
-                this.speedX += (dx / dist) * force * 0.02;
-                this.speedY += (dy / dist) * force * 0.02;
-            }
-            const maxSpeed = 0.8;
-            if (Math.abs(this.speedX) > maxSpeed) this.speedX = Math.sign(this.speedX) * maxSpeed;
-            if (Math.abs(this.speedY) > maxSpeed) this.speedY = Math.sign(this.speedY) * maxSpeed;
-        }
-        draw() {
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(0, 166, 212, ${this.opacity})`;
-            ctx.fill();
-        }
-    }
-
-    function init(count) {
-        particles = [];
-        for (let i = 0; i < count; i++) particles.push(new Particle());
-    }
-    init(Math.min(Math.floor((canvas.width * canvas.height) / 14000), 80));
-
-    function drawConnections() {
-        for (let i = 0; i < particles.length; i++) {
-            for (let j = i + 1; j < particles.length; j++) {
-                const dx = particles[i].x - particles[j].x;
-                const dy = particles[i].y - particles[j].y;
-                const dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist < 150) {
-                    ctx.beginPath();
-                    ctx.moveTo(particles[i].x, particles[i].y);
-                    ctx.lineTo(particles[j].x, particles[j].y);
-                    ctx.strokeStyle = `rgba(0, 166, 212, ${(1 - dist / 150) * 0.12})`;
-                    ctx.lineWidth = 0.5;
-                    ctx.stroke();
-                }
-            }
-        }
-    }
-
-    function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for (const p of particles) { p.update(); p.draw(); }
-        drawConnections();
-        requestAnimationFrame(animate);
-    }
-    animate();
-
-    window.addEventListener('resize', () => {
-        resize();
-        init(Math.min(Math.floor((canvas.width * canvas.height) / 14000), 80));
-    });
-})();
-
-/* =============================================
-   TYPING EFFECT
-   ============================================= */
-(function initTyping() {
-    const el = document.getElementById('typing-text');
-    if (!el) return;
-    let timeoutId;
-
-    function startTyping() {
-        clearTimeout(timeoutId);
-        const words = i18n[currentLang].typing;
-        let wordIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-
-        function type() {
-            const current = words[wordIndex];
-            el.textContent = isDeleting
-                ? current.substring(0, charIndex - 1)
-                : current.substring(0, charIndex + 1);
-            isDeleting ? charIndex-- : charIndex++;
-
-            let speed = isDeleting ? 40 : 80;
-            if (!isDeleting && charIndex === current.length) {
-                speed = 2000;
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                wordIndex = (wordIndex + 1) % words.length;
-                speed = 500;
-            }
-            timeoutId = setTimeout(type, speed);
-        }
-        type();
-    }
-    startTyping();
-    typingRestart = startTyping;
-})();
-
-/* =============================================
-   REVEAL ON SCROLL
-   ============================================= */
-(function scrollReveal() {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.classList.add('visible');
-        });
-    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-})();
-
-/* =============================================
-   SKILL BARS
-   ============================================= */
-(function animateSkills() {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
-            const bar = entry.target;
-            const width = bar.dataset.width;
-            bar.style.width = width + '%';
-
-            const label = bar.closest('.skill-item').querySelector('.skill-percent');
-            if (label) {
-                let current = 0;
-                const target = parseInt(width);
-                const step = Math.max(1, Math.floor(target / 40));
-                const interval = setInterval(() => {
-                    current += step;
-                    if (current >= target) { current = target; clearInterval(interval); }
-                    label.textContent = current + '%';
-                }, 30);
-            }
-        });
-    }, { threshold: 0.5 });
-    document.querySelectorAll('.skill-progress').forEach(bar => observer.observe(bar));
-})();
-
-/* =============================================
-   HEADER SCROLL
-   ============================================= */
-(function headerScroll() {
-    const header = document.querySelector('.header');
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-        if (!ticking) {
-            requestAnimationFrame(() => {
-                header.classList.toggle('scrolled', window.scrollY > 50);
-                ticking = false;
-            });
-            ticking = true;
-        }
-    });
-})();
-
-/* =============================================
-   CARD TILT
-   ============================================= */
-(function cardTilt() {
-    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) return;
-    document.querySelectorAll('.glass-card, .portfolio-card').forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const rotateX = (y - rect.height / 2) / (rect.height / 2) * -6;
-            const rotateY = (x - rect.width / 2) / (rect.width / 2) * 6;
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-3px)`;
-        });
-        card.addEventListener('mouseleave', () => { card.style.transform = ''; });
-    });
-})();
+applyTranslations();
 
 /* =============================================
    MOBILE MENU
    ============================================= */
-function toggleMenu() {
-    const nav = document.getElementById('nav');
-    const hamburger = document.querySelector('.hamburger');
-    nav.classList.toggle('active');
-    hamburger.classList.toggle('active');
-    document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+function isMobileNav() {
+    return window.matchMedia('(max-width: 900px)').matches;
 }
 
-function seleccionar() {
-    const nav = document.getElementById('nav');
-    const hamburger = document.querySelector('.hamburger');
-    nav.classList.remove('active');
-    hamburger.classList.remove('active');
-    document.body.style.overflow = '';
+function setMenu(open) {
+    document.body.classList.toggle('nav-open', open);
+    if (nav) nav.classList.toggle('is-open', open);
+    if (menuToggle) {
+        menuToggle.classList.toggle('is-open', open);
+        menuToggle.setAttribute('aria-expanded', String(open));
+    }
+    if (nav) nav.toggleAttribute('inert', isMobileNav() && !open);
+    updateMenuLabel(open);
+}
+
+function syncNavState() {
+    setMenu(false);
+}
+
+if (menuToggle && nav) {
+    menuToggle.addEventListener('click', () => {
+        setMenu(!document.body.classList.contains('nav-open'));
+    });
+
+    nav.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => setMenu(false));
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') setMenu(false);
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!document.body.classList.contains('nav-open')) return;
+        if (header.contains(event.target)) return;
+        setMenu(false);
+    });
+
+    window.addEventListener('resize', syncNavState);
+    setMenu(false);
 }
 
 /* =============================================
-   FORM ALERT
+   SCROLL PROGRESS, HEADER AND ACTIVE SECTION
    ============================================= */
-function Alert() {
-    alert(currentLang === 'es' ? 'Gracias por tu mensaje <3' : 'Thanks for your message <3');
+const progressBar = document.getElementById('scroll-progress');
+const sections = Array.from(document.querySelectorAll('main section[id]'));
+const navLinks = Array.from(document.querySelectorAll('.nav-link'));
+let scrollTicking = false;
+
+function setActiveSection(sectionId) {
+    navLinks.forEach((link) => {
+        const isActive = link.dataset.section === sectionId;
+        link.classList.toggle('is-active', isActive);
+        if (isActive) {
+            link.setAttribute('aria-current', 'location');
+        } else {
+            link.removeAttribute('aria-current');
+        }
+    });
 }
+
+function updateScrollUI() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const hero = document.querySelector('.hero');
+    const heroProgress = hero ? Math.min(scrollTop / Math.max(hero.offsetHeight, 1), 1) : 0;
+
+    if (!prefersReducedMotion.matches) {
+        document.documentElement.style.setProperty('--ambient-shift', `${Math.round(heroProgress * 44)}px`);
+        document.documentElement.style.setProperty('--portrait-shift', `${Math.round(heroProgress * -34)}px`);
+    }
+
+    if (progressBar) {
+        progressBar.style.width = `${docHeight > 0 ? (scrollTop / docHeight) * 100 : 0}%`;
+    }
+
+    if (header) header.classList.toggle('is-scrolled', scrollTop > 24);
+
+    if (sections.length) {
+        const marker = scrollTop + window.innerHeight * 0.32;
+        let activeId = sections[0].id;
+        sections.forEach((section) => {
+            if (section.offsetTop <= marker) activeId = section.id;
+        });
+
+        if (scrollTop + window.innerHeight >= document.documentElement.scrollHeight - 8) {
+            activeId = sections[sections.length - 1].id;
+        }
+
+        setActiveSection(activeId);
+    }
+
+    scrollTicking = false;
+}
+
+window.addEventListener('scroll', () => {
+    if (!scrollTicking) {
+        window.requestAnimationFrame(updateScrollUI);
+        scrollTicking = true;
+    }
+}, { passive: true });
+
+window.addEventListener('resize', updateScrollUI);
+updateScrollUI();
+
+/* =============================================
+   TYPING EFFECT
+   ============================================= */
+let typingTimer = null;
+
+function startTyping() {
+    if (!typingElement) return;
+
+    window.clearTimeout(typingTimer);
+    const words = i18n[currentLang].typing;
+
+    if (prefersReducedMotion.matches) {
+        typingElement.textContent = words[0];
+        return;
+    }
+
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function type() {
+        const word = words[wordIndex];
+        typingElement.textContent = isDeleting
+            ? word.substring(0, charIndex - 1)
+            : word.substring(0, charIndex + 1);
+
+        if (isDeleting) {
+            charIndex -= 1;
+        } else {
+            charIndex += 1;
+        }
+
+        let speed = isDeleting ? 38 : 72;
+
+        if (!isDeleting && charIndex === word.length) {
+            speed = 2100;
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+            speed = 420;
+        }
+
+        typingTimer = window.setTimeout(type, speed);
+    }
+
+    type();
+}
+
+startTyping();
+typingRestart = startTyping;
+
+/* =============================================
+   REVEAL ON SCROLL
+   ============================================= */
+(function initReveals() {
+    const revealElements = document.querySelectorAll('.reveal, .reveal-stagger');
+
+    if (prefersReducedMotion.matches || !('IntersectionObserver' in window)) {
+        revealElements.forEach((element) => element.classList.add('is-visible'));
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+        });
+    }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -60px 0px'
+    });
+
+    revealElements.forEach((element) => observer.observe(element));
+})();
+
+/* =============================================
+   FOOTER YEAR
+   ============================================= */
+const yearElement = document.getElementById('year');
+if (yearElement) yearElement.textContent = new Date().getFullYear();
